@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAJSH X MODS V.I.P | DAKSH 😈</title>
+
+<link rel="preload" as="image" href="https://i.ibb.co/8Lw47PK6/IMG-20260108-002002-409.jpg">
+
+<style>
+:root{
+--primary:#00ff88;
+--secondary:#8a2be2;
+--bg:#03030b;
+--accent:#ff6b00;
+}
+*{box-sizing:border-box;cursor:crosshair;margin:0;padding:0;user-select:none;}
+body{
+background:var(--bg);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Segoe UI,Tahoma,Verdana,sans-serif;
+color:#fff;
+overflow:hidden;
+padding:20px;
+}
+.main-card{
+width:95%;
+max-width:480px;
+background:rgba(10,10,25,.92);
+border:4px solid red;
+border-radius:25px;
+padding:30px;
+text-align:center;
+position:relative;
+z-index:10;
+animation:floatUpDown 8s ease-in-out infinite;
+}
+@keyframes floatUpDown{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+}
+.logo-section{
+width:100px;height:100px;
+margin:-80px auto 20px;
+border-radius:50%;
+overflow:hidden;
+border:4px solid #fff;
+}
+.logo-section img{
+width:100%;height:100%;
+object-fit:cover;
+}
+.owner-badge{
+background:linear-gradient(90deg,red,orange,yellow,green,cyan,purple,red);
+padding:10px 30px;
+border-radius:50px;
+font-weight:900;
+margin-bottom:15px;
+}
+.user-info{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:10px;
+margin-bottom:20px;
+font-size:12px;
+}
+.info-box span{
+display:block;
+color:var(--primary);
+font-weight:900;
+}
+.terminal{
+background:black;
+border:2px solid red;
+height:120px;
+padding:15px;
+font-family:Courier New,monospace;
+font-size:11px;
+text-align:left;
+overflow:hidden;
+border-radius:12px;
+margin-bottom:20px;
+}
+.btn-main{
+width:100%;
+padding:18px;
+border:none;
+border-radius:15px;
+font-weight:900;
+font-size:16px;
+color:#fff;
+background:linear-gradient(45deg,red,orange,yellow);
+cursor:pointer;
+}
+.result-box{
+display:none;
+margin-top:20px;
+padding:20px;
+border:2px dashed var(--primary);
+border-radius:15px;
+}
+.key-text{
+display:block;
+margin:15px 0;
+padding:15px;
+border:2px solid var(--primary);
+font-family:Courier New,monospace;
+font-size:20px;
+}
+.social-grid{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+.social-btn{
+flex:1;
+padding:14px;
+border-radius:10px;
+border:2px solid #fff;
+background:transparent;
+color:#fff;
+font-size:12px;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="main-card">
+
+<div class="logo-section">
+<img src="https://i.ibb.co/8Lw47PK6/IMG-20260108-002002-409.jpg">
+</div>
+
+<div class="owner-badge">OWNER: DAKSH 😈</div>
+
+<h2 style="margin-bottom:10px;">DAJSH X MODS V.I.P</h2>
+
+<div class="user-info">
+<div class="info-box">LIVE<span id="onlineCount">1,000+</span></div>
+<div class="info-box">USER<span>10M+</span></div>
+<div class="info-box">PING<span id="pingVal">-- ms</span></div>
+</div>
+
+<div class="terminal" id="term">
+<div>> SYSTEM READY</div>
+<div>> SECURITY ACTIVE</div>
+<div>> WAITING...</div>
+</div>
+
+<div id="action-area">
+<button class="btn-main" onclick="startFlow()">GENERATE ACCESS KEY</button>
+</div>
+
+<div id="procBar" style="display:none;margin:20px 0;">
+<div>BYPASSING: <span id="timer">30</span>s</div>
+<div style="width:100%;height:10px;background:#111;border-radius:10px;margin-top:10px;">
+<div id="pBar" style="height:100%;width:0%;background:linear-gradient(90deg,red,orange,yellow,green,cyan,purple);"></div>
+</div>
+</div>
+
+<div id="result-area" class="result-box">
+<span>VIP KEY UNLOCKED ✅</span>
+<span class="key-text" id="keyOutput">...</span>
+<button class="btn-main" onclick="copyKey()">COPY KEY</button>
+</div>
+
+<div class="social-grid">
+<button class="social-btn" onclick="window.open('https://t.me/+AHk9IfA_6IExZjdl')">TELEGRAM</button>
+<button class="social-btn" onclick="window.open('https://t.me/+AHk9IfA_6IExZjdl')">YOUTUBE</button>
+</div>
+
+</div>
+
+<script>
+const myShortLink="https://t.me/+AHk9IfA_6IExZjdl";
+const keys=["dxm-18A9","dxm-K92X","dxm-ZZ01","dxm-77QW"];
+
+function startFlow(){
+document.getElementById("action-area").style.display="none";
+document.getElementById("procBar").style.display="block";
+let t=30;
+let int=setInterval(()=>{
+t--;
+document.getElementById("timer").innerText=t;
+document.getElementById("pBar").style.width=((30-t)/30*100)+"%";
+if(t<=0){
+clearInterval(int);
+window.location.href=myShortLink;
+}
+},1000);
+}
+
+function copyKey(){
+navigator.clipboard.writeText(document.getElementById("keyOutput").innerText);
+alert("KEY COPIED");
+}
+
+setInterval(()=>{
+document.getElementById("onlineCount").innerText=(1000+Math.floor(Math.random()*500))+"+";
+document.getElementById("pingVal").innerText=(15+Math.floor(Math.random()*30))+" ms";
+},2000);
+</script>
+
+</body>
+</html>
