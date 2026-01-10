@@ -166,7 +166,11 @@ cursor:pointer;
 <div id="result-area" class="result-box">
 <span>VIP KEY UNLOCKED ✅</span>
 <span class="key-text" id="keyOutput">...</span>
-<button class="btn-main" onclick="copyKey()">COPY KEY</button>
+<button <div id="action-area">
+  <button class="btn-main" onclick="startKeyFlow()">
+    GENERATE ACCESS KEY
+  </button>
+</div>
 </div>
 
 <div class="social-grid">
@@ -177,8 +181,42 @@ cursor:pointer;
 </div>
 
 <script>
-const myShortLink="https://t.me/+AHk9IfA_6IExZjdl";
-const keys=["dxm-18A9","dxm-K92X","dxm-ZZ01","dxm-77QW"];
+const earnLink = "https://shrinkme.click/DASKHXMODKEYGENERATOR";
+
+function startKeyFlow() {
+  localStorage.setItem("wentToAd", "1");
+  window.location.href = earnLink;
+}
+
+window.addEventListener("focus", () => {
+  if (localStorage.getItem("wentToAd") === "1") {
+    localStorage.removeItem("wentToAd");
+    generateKey();
+  }
+});
+
+function generateKey() {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  function rand(len) {
+    let s = "";
+    for (let i = 0; i < len; i++) {
+      s += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return s;
+  }
+
+  const key = `DAKSH-MODS-${rand(4)}-${rand(4)}`;
+  document.getElementById("keyOutput").innerText = key;
+  document.getElementById("result-area").style.display = "block";
+}
+
+function copyKey() {
+  navigator.clipboard.writeText(
+    document.getElementById("keyOutput").innerText
+  );
+  alert("KEY COPIED");
+}
+</script>
 
 function startFlow(){
 document.getElementById("action-area").style.display="none";
@@ -190,7 +228,7 @@ document.getElementById("timer").innerText=t;
 document.getElementById("pBar").style.width=((30-t)/30*100)+"%";
 if(t<=0){
 clearInterval(int);
-window.location.href=myShortLink;
+window.location.href=Earnlink;
 }
 },1000);
 }
