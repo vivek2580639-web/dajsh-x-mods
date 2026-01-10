@@ -5,125 +5,132 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DAKSH X MODS V.I.P | DAKSH ☠️</title>
 
-<link rel="preload" as="image" href="https://i.ibb.co/8Lw47PK6/IMG-20260108-002002-409.jpg">
-
 <style>
 :root{
---primary:#00ff88;
---secondary:#8a2be2;
---bg:#03030b;
---accent:#ff6b00;
+  --primary:#00ff88;
+  --secondary:#00c6ff;
+  --bg:#000;
 }
-*{box-sizing:border-box;cursor:crosshair;margin:0;padding:0;user-select:none;}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  user-select:none;
+}
+
 body{
-background:var(--bg);
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-font-family:Segoe UI,Tahoma,Verdana,sans-serif;
-color:#fff;
-overflow:hidden;
-padding:20px;
+  min-height:100vh;
+  font-family:Segoe UI,Tahoma,Verdana,sans-serif;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+
+  /* 🔥 BACKGROUND IMAGE */
+  background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url("IMG_20260110_003619.jpg"); /* 🔴 YAHAN APNI IMAGE LINK DAALNA */
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
 }
+
 .main-card{
-width:95%;
-max-width:480px;
-background:rgba(10,10,25,.92);
-border:4px solid red;
-border-radius:25px;
-padding:30px;
-text-align:center;
-position:relative;
-z-index:10;
-animation:floatUpDown 8s ease-in-out infinite;
+  width:95%;
+  max-width:480px;
+  background:rgba(5,5,15,.9);
+  border:2px solid var(--primary);
+  border-radius:25px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 0 30px rgba(0,255,136,.4);
+  backdrop-filter:blur(6px);
 }
-@keyframes floatUpDown{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-15px)}
-}
+
 .logo-section{
-width:100px;height:100px;
-margin:-80px auto 20px;
-border-radius:50%;
-overflow:hidden;
-border:4px solid #fff;
+  width:120px;
+  height:120px;
+  margin:-80px auto 20px;
+  border-radius:50%;
+  overflow:hidden;
+  border:4px solid var(--primary);
 }
+
 .logo-section img{
-width:100%;height:100%;
-object-fit:cover;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
+
 .owner-badge{
-background:linear-gradient(90deg,red,orange,yellow,green,cyan,purple,red);
-padding:10px 30px;
-border-radius:50px;
-font-weight:900;
-margin-bottom:15px;
+  display:inline-block;
+  padding:10px 3IMG_20260110_003619.jpg5px;
+  border-radius:50px;
+  font-weight:900;
+  margin-bottom:15px;
+  background:linear-gradient(90deg,#ff004f,#00c6ff);
 }
-.user-info{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:10px;
-margin-bottom:20px;
-font-size:12px;
+
+h2{
+  margin-bottom:20px;
+  letter-spacing:1px;
 }
-.info-box span{
-display:block;
-color:var(--primary);
-font-weight:900;
-}
-.terminal{
-background:black;
-border:2px solid red;
-height:120px;
-padding:15px;
-font-family:Courier New,monospace;
-font-size:11px;
-text-align:left;
-overflow:hidden;
-border-radius:12px;
-margin-bottom:20px;
-}
+
 .btn-main{
-width:100%;
-padding:18px;
-border:none;
-border-radius:15px;
-font-weight:900;
-font-size:16px;
-color:#fff;
-background:linear-gradient(45deg,red,orange,yellow);
-cursor:pointer;
+  width:100%;
+  padding:18px;
+  border:none;
+  border-radius:15px;
+  font-weight:900;
+  font-size:16px;
+  color:#fff;
+  background:linear-gradient(90deg,#ff004f,#00c6ff);
+  cursor:pointer;
+  transition:.3s;
 }
+
+.btn-main:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 20px var(--primary);
+}
+
 .result-box{
-display:none;
-margin-top:20px;
-padding:20px;
-border:2px dashed var(--primary);
-border-radius:15px;
+  display:none;
+  margin-top:20px;
+  padding:20px;
+  border:2px dashed var(--primary);
+  border-radius:15px;
+  background:rgba(0,0,0,.6);
 }
-.key-text{
-display:block;
-margin:15px 0;
-padding:15px;
-border:2px solid var(--primary);
-font-family:Courier New,monospace;
-font-size:20px;
+
+#keyOutput{
+  display:block;
+  margin:15px 0;
+  padding:15px;
+  border-radius:10px;
+  border:2px solid var(--primary);
+  color:var(--primary);
+  font-weight:900;
+  letter-spacing:2px;
+  text-shadow:0 0 10px rgba(0,255,136,.9);
 }
+
 .social-grid{
-display:flex;
-gap:15px;
-margin-top:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:20px;
 }
+
 .social-btn{
-flex:1;
-padding:14px;
-border-radius:10px;
-border:2px solid #fff;
-background:transparent;
-color:#fff;
-font-size:12px;
-cursor:pointer;
+  padding:12px;
+  border-radius:12px;
+  border:2px solid #fff;
+  background:transparent;
+  color:#fff;
+  cursor:pointer;
 }
 </style>
 </head>
@@ -132,116 +139,66 @@ cursor:pointer;
 
 <div class="main-card">
 
-<div class="logo-section">
-  <img src="IMG_20260110_003619.jpg" alt="DAKSH OFFICIAL LOGO">
-</div>
+  <div class="logo-section">
+    <img src="https://i.ibb.co/8Lw47PK6/IMG-20260108-002002-409.jpg" alt="DAKSH">
+  </div>
 
-<div class="owner-badge">OWNER: DAKSH ☠️</div>
+  <div class="owner-badge">OWNER : DAKSH 😈</div>
 
-<h2 style="margin-bottom:10px;">DAKSH X MODS V.I.P</h2>
+  <h2>DAKSH X MODS V.I.P</h2>
 
-<div class="user-info">
-<div class="info-box">LIVE<span id="onlineCount">1,000+</span></div>
-<div class="info-box">USER<span>10M+</span></div>
-<div class="info-box">PING<span id="pingVal">-- ms</span></div>
-</div>
+  <div id="action-area">
+    <button class="btn-main" onclick="startKeyFlow()">
+      GENERATE ACCESS KEY
+    </button>
+  </div>
 
-<div class="terminal" id="term">
-<div>> SYSTEM READY</div>
-<div>> SECURITY ACTIVE</div>
-<div>> WAITING...</div>
-</div>
+  <div id="result-area" class="result-box">
+    <span>VIP KEY UNLOCKED ✅</span>
+    <div id="keyOutput">----</div>
+    <button class="btn-main" onclick="copyKey()">COPY KEY</button>
+  </div>
 
-<div id="action-area">
-<button class="btn-main" onclick="startFlow()">GENERATE ACCESS KEY</button>
-</div>
-
-<div id="procBar" style="display:none;margin:20px 0;">
-<div>BYPASSING: <span id="timer">30</span>s</div>
-<div style="width:100%;height:10px;background:#111;border-radius:10px;margin-top:10px;">
-<div id="pBar" style="height:100%;width:0%;background:linear-gradient(90deg,red,orange,yellow,green,cyan,purple);"></div>
-</div>
-</div>
-
-<div id="result-area" class="result-box">
-<span>VIP KEY UNLOCKED ✅</span>
-<span class="key-text" id="keyOutput">...</span>
-<button <div id="action-area">
-  <button class="btn-main" onclick="startKeyFlow()">
-    GENERATE ACCESS KEY
-  </button>
-</div>
-</div>
-
-<div class="social-grid">
-<button class="social-btn" onclick="window.open('https://t.me/+AHk9IfA_6IExZjdl')">TELEGRAM</button>
-<button class="social-btn" onclick="window.open('https://t.me/+AHk9IfA_6IExZjdl')">YOUTUBE</button>
-</div>
+  <div class="social-grid">
+    <button class="social-btn" onclick="window.open('https://t.me/+AHk9IfA_6IExZjdl')">
+      TELEGRAM
+    </button>
+    <button class="social-btn" onclick="window.open('https://t.me/+AHk9IfA_6IExZjdl')">
+      YOUTUBE
+    </button>
+  </div>
 
 </div>
 
 <script>
 const earnLink = "https://shrinkme.click/DASKHXMODKEYGENERATOR";
 
-function startKeyFlow() {
-  localStorage.setItem("wentToAd", "1");
+function startKeyFlow(){
+  localStorage.setItem("wentToAd","1");
   window.location.href = earnLink;
 }
 
-window.addEventListener("focus", () => {
-  if (localStorage.getItem("wentToAd") === "1") {
+window.addEventListener("focus",()=>{
+  if(localStorage.getItem("wentToAd")==="1"){
     localStorage.removeItem("wentToAd");
     generateKey();
   }
 });
 
-function generateKey() {
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  function rand(len) {
-    let s = "";
-    for (let i = 0; i < len; i++) {
-      s += chars[Math.floor(Math.random() * chars.length)];
-    }
-    return s;
-  }
-
-  const key = `DAKSH-MODS-${rand(4)}-${rand(4)}`;
-  document.getElementById("keyOutput").innerText = key;
-  document.getElementById("result-area").style.display = "block";
+function generateKey(){
+  const chars="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const rand=l=>Array.from({length:l},()=>chars[Math.floor(Math.random()*chars.length)]).join("");
+  const key=`DAKSH-MODS-${rand(4)}-${rand(4)}`;
+  document.getElementById("keyOutput").innerText=key;
+  document.getElementById("result-area").style.display="block";
 }
 
-function copyKey() {
+function copyKey(){
   navigator.clipboard.writeText(
     document.getElementById("keyOutput").innerText
   );
   alert("KEY COPIED");
 }
-</script>
-
-function startFlow(){
-document.getElementById("action-area").style.display="none";
-document.getElementById("procBar").style.display="block";
-let t=30;
-let int=setInterval(()=>{
-t--;
-document.getElementById("timer").innerText=t;
-document.getElementById("pBar").style.width=((30-t)/30*100)+"%";
-if(t<=0){
-clearInterval(int);
-window.location.href=Earnlink;
-}
-},1000);
-}
-
-function copyKey(){
-navigator.clipboard.writeText(document.getElementById("keyOutput").innerText);
-alert("KEY COPIED");
-}
-
-setInterval(()=>{
-document.getElementById("onlineCount").innerText=(1000+Math.floor(Math.random()*500))+"+";
-document.getElementById("pingVal").innerText=(15+Math.floor(Math.random()*30))+" ms";
-},2000);
 </script>
 
 </body>
