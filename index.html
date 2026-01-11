@@ -9,7 +9,6 @@
 :root{
   --primary:#00ff88;
   --secondary:#00c6ff;
-  --bg:#000;
 }
 *{box-sizing:border-box;margin:0;padding:0;user-select:none}
 body{
@@ -79,7 +78,6 @@ body{
   color:var(--primary);
   font-weight:900;
   letter-spacing:2px;
-  text-shadow:0 0 10px rgba(0,255,136,.9);
 }
 .social-grid{
   display:grid;
@@ -124,65 +122,61 @@ body{
 
 <script>
 const AD_LINK = "https://shrinkme.click/DASKHXMODKEYGENERATOR";
+const FIXED_KEY = "DAKSH_MODS_AVYT_VVKK";
 const KEY_LIFE = 24 * 60 * 60 * 1000;
 
-// block direct load
+// reset on fresh load
 if(!sessionStorage.getItem("daksh_init")){
   sessionStorage.setItem("daksh_init","1");
   localStorage.removeItem("daksh_ad_ok");
+  localStorage.removeItem("daksh_key_time");
 }
 
+// go to ad
 function goToAd(){
-  document.getElementById("genBtn").disabled=true;
   localStorage.setItem("daksh_ad_ok","0");
   localStorage.setItem("daksh_ad_time",Date.now());
-  location.href = AD_LINK;
+  window.location.href = AD_LINK;
 }
 
-// ad return detect
+// detect return from ad
 window.addEventListener("focus",()=>{
   const t = localStorage.getItem("daksh_ad_time");
   if(!t) return;
-  if(Date.now()-t < 8000) return; // too fast = fake
+  if(Date.now()-t < 8000) return; // fake skip
   localStorage.setItem("daksh_ad_ok","1");
   unlockKey();
 });
 
-// key unlock
+// unlock key
 function unlockKey(){
-  if(localStorage.getItem("daksh_used")){
-    alert("❌ Key already generated on this device");
-    return;
-  }
   if(localStorage.getItem("daksh_ad_ok")!=="1") return;
 
-  const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  const r=n=>Array.from({length:n},()=>chars[Math.floor(Math.random()*chars.length)]).join("");
-  const key=`DAKSH-MODS-${r(4)}-${r(4)}`;
+  const kt = localStorage.getItem("daksh_key_time");
+  if(kt && Date.now()-kt < KEY_LIFE){
+    showKey();
+    return;
+  }
 
-  document.getElementById("keyOutput").innerText=key;
-  document.getElementById("result").style.display="block";
-
-  localStorage.setItem("daksh_used","1");
-  localStorage.setItem("daksh_exp",Date.now()+KEY_LIFE);
+  localStorage.setItem("daksh_key_time",Date.now());
+  showKey();
 }
 
-// expiry auto check
-if(localStorage.getItem("daksh_exp") && Date.now()>localStorage.getItem("daksh_exp")){
-  localStorage.clear();
+function showKey(){
+  document.getElementById("keyOutput").innerText = FIXED_KEY;
+  document.getElementById("result").style.display = "block";
 }
 
 function copyKey(){
-  navigator.clipboard.writeText(document.getElementById("keyOutput").innerText);
-  alert("KEY COPIED");
+  navigator.clipboard.writeText(FIXED_KEY);
+  alert("KEY COPIED ✅");
 }
 
-// basic devtools annoy
-setInterval(()=>{
-  if(window.outerWidth-window.innerWidth>200){
-    document.body.innerHTML="<h1 style='color:red;text-align:center'>⚠️ SECURITY BLOCKED</h1>";
-  }
-},1000);
+// auto expire
+if(localStorage.getItem("daksh_key_time") &&
+   Date.now()-localStorage.getItem("daksh_key_time") > KEY_LIFE){
+  localStorage.clear();
+}
 </script>
 
 </body>
